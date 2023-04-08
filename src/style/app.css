@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,html {
+    @apply p-0 m-0;
+}
+
+body {
+    @apply flex flex-col justify-center items-center mx-auto max-w-2xl transition-colors lg:max-w-5xl bg-slate-50 dark:bg-zinc-900 text-slate-900 dark:text-slate-50;
+}
+
+@keyframes popIn {
+    from {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
