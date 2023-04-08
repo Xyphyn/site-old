@@ -1,0 +1,105 @@
+<script>
+    import Card from '../components/Card.svelte'
+    import { Icon, Link } from 'svelte-hero-icons'
+</script>
+
+# The Basics
+
+First, you'll probably need to use a different operating system. The rest of this guide will assume you are on a **Linux** based system.
+
+**Windows** has been known to spy on its users for a while now. There's telemetry that you can't opt-out of, but worst of all is that they <a href="https://www.youtube.com/watch?v=IT4vDfA_4NI" class="underline">sell your data to advertising companies.</a>
+
+**MacOS** and other Apple operating systems spy less, but still spy, despite Apple's advertising.
+
+The following are the recommended Linux distros for daily usage:
+
+<div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+    <Card url="https://fedoraproject.org/workstation/">
+        <img
+            src="https://fedoraproject.org/favicon.ico"
+            alt="The Fedora logo"
+            slot="image"
+        />
+        <h3 slot="title">Fedora</h3>
+        <p slot="description">
+            Fedora Workstation is a stable but secure Linux distribution
+            targetted towards regular users.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>fedoraproject.org</span>
+        </svelte:fragment>
+    </Card>
+    <Card url="https://get.opensuse.org/tumbleweed/">
+        <img
+            src="https://static.opensuse.org/favicon.svg"
+            alt="The OpenSUSE logo"
+            slot="image"
+        />
+        <h3 slot="title">OpenSUSE Tumbleweed</h3>
+        <p slot="description">
+            OpenSUSE Tumbleweed is rolling release meaning it is less stable, but you get the latest patches faster.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>get.opensuse.org</span>
+        </svelte:fragment>
+    </Card><Card url="https://silverblue.fedoraproject.org/">
+        <img
+            src="https://silverblue.fedoraproject.org/public/silverblue-logo.svg"
+            alt="The Fedora logo"
+            width="48"
+            height="48"
+            slot="image"
+        />
+        <h3 slot="title">Fedora Silverblue</h3>
+        <p slot="description">
+            Fedora Silverblue is an immutable Linux distribution, meaning the core OS is an immutable image, but you can overlay software on top of it with rpm-ostree. It is very stable, and secure due to the nature of incentivising flatpak.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>silverblue.fedoraproject.org</span>
+        </svelte:fragment>
+    </Card>
+</div>
+
+# Browser
+
+Considering most of the content we consume is on the internet, we need a web browser. However, some have better privacy tools than others. Here are the recommended browsers:
+
+<div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+<Card url="https://ftp.mozilla.org/pub/firefox/releases/">
+        <img
+            src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg"
+            alt="The Firefox logo"
+            width="48"
+            height="48"
+            slot="image"
+        />
+        <h3 slot="title">Firefox</h3>
+        <p slot="description">
+            Firefox provides enhanced privacy settings which can help block various types of tracking.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>ftp.mozilla.org (main website has a tracking ID)</span>
+        </svelte:fragment>
+    </Card>
+    <Card url="https://brave.com">
+        <img
+            src="https://brave.com/static-assets/images/brave-logo-sans-text.svg"
+            alt="The Brave logo"
+            width="48"
+            height="48"
+            slot="image"
+        />
+        <h3 slot="title">Brave</h3>
+        <p slot="description">
+            Brave provides many privacy options and strong fingerprinting protection.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>brave.com</span>
+        </svelte:fragment>
+    </Card>
+</div>

@@ -7,7 +7,7 @@
 <div class="grid grid-cols-1 gap-4 m-12 w-full">
     <span class="mx-4 text-sm uppercase opacity-60 md:mx-4">About Me</span>
     <div
-        class="flex flex-col gap-4 justify-center items-start m-4 max-w-2xl md:mx-4"
+        class="flex flex-col gap-4 justify-center items-start mb-4 max-w-2xl md:mx-4"
     >
         <h1 class="text-4xl font-bold md:text-5xl">
             Hobbyist Kotlin, TypeScript, and Svelte developer.

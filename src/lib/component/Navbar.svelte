@@ -24,7 +24,7 @@
     </a>
     <div
         class="flex flex-row min-w-[12rem] px-4 py-1 rounded-full
-        bg-white/10 dark:bg-white/10 items-center justify-center shadow-md dark:border-t dark:border-t-white/10 gap-4"
+        bg-white/10 dark:bg-white/10 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-4"
     >
         <Button link href="/about" color={Color.secondary}>About</Button>
         <Button link href="/privacy" color={Color.secondary}>

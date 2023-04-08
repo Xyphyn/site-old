@@ -19,7 +19,7 @@
 {:else}
     <a
         {href}
-        class="text-sm rounded-md px-3 py-1.5 transition-all {color} {clazz}"
+        class="text-sm rounded-md px-3 py-1.5 transition-all no-underline {color} {clazz}"
     >
         <slot />
     </a>
