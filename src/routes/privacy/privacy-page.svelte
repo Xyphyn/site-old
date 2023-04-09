@@ -13,7 +13,7 @@
     <nav
         class="{open
             ? 'flex'
-            : 'hidden'} p-4 pt-16 sm:pt-8 sticky left-0 top-0 sm:relative flex-col gap-2 w-64 sm:flex sm:bg-transparent
+            : 'hidden'} p-4 pt-16 sm:pt-8 fixed left-0 top-0 flex-col gap-2 w-64 sm:flex sm:bg-transparent
              sm:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen sm:h-max z-30 shadow-2xl sm:shadow-none"
     >
         <span class="flex flex-row justify-between items-center ml-2 font-bold">
