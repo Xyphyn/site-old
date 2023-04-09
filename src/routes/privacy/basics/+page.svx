@@ -1,3 +1,7 @@
+---
+title: 'The Basics'
+---
+
 <script>
     import Card from '../components/Card.svelte'
     import { Icon, Link } from 'svelte-hero-icons'
@@ -7,7 +11,7 @@
 
 First, you'll probably need to use a different operating system. The rest of this guide will assume you are on a **Linux** based system.
 
-**Windows** has been known to spy on its users for a while now. There's telemetry that you can't opt-out of, but worst of all is that they <a href="https://www.youtube.com/watch?v=IT4vDfA_4NI" class="underline">sell your data to advertising companies.</a>
+**Windows** has been known to spy on its users for a while now. There's an overwelming number of sources for this, but a good one is The PC Security Channel's "has windows become spyware?". It runs Windows 11's network activity on a clean installation on idle through wireshark. Check it out <a href="https://www.youtube.com/watch?v=IT4vDfA_4NI" class="underline">here.</a>
 
 **MacOS** and other Apple operating systems spy less, but still spy, despite Apple's advertising.
 
@@ -68,29 +72,29 @@ The following are the recommended Linux distros for daily usage:
 Considering most of the content we consume is on the internet, we need a web browser. However, some have better privacy tools than others. Here are the recommended browsers:
 
 <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
-<Card url="https://ftp.mozilla.org/pub/firefox/releases/">
+<Card url="https://librewolf.net/">
         <img
-            src="https://www.mozilla.org/media/protocol/img/logos/firefox/browser/logo.eb1324e44442.svg"
+            src="https://librewolf.net/icon.svg"
             alt="The Firefox logo"
             width="48"
             height="48"
             slot="image"
         />
-        <h3 slot="title">Firefox</h3>
+        <h3 slot="title">Librewolf</h3>
         <p slot="description">
-            Firefox provides enhanced privacy settings which can help block various types of tracking.
+            Librewolf is a custom fork of Firefox that has private defaults, very strong fingerprinting protection, and no telemetry.
         </p>
         <svelte:fragment slot="link-text">
             <Icon src={Link} size="16" mini />
-            <span>ftp.mozilla.org (main website has a tracking ID)</span>
+            <span>librewolf.net</span>
         </svelte:fragment>
     </Card>
     <Card url="https://brave.com">
         <img
             src="https://brave.com/static-assets/images/brave-logo-sans-text.svg"
             alt="The Brave logo"
-            width="48"
-            height="48"
+            width="36"
+            height="36"
             slot="image"
         />
         <h3 slot="title">Brave</h3>
@@ -103,3 +107,5 @@ Considering most of the content we consume is on the internet, we need a web bro
         </svelte:fragment>
     </Card>
 </div>
+
+Personally, I use **Brave**, because of its defaults

@@ -6,9 +6,9 @@
 
 <title>Xylight</title>
 <div class="grid grid-cols-1 gap-4 m-12 w-full">
-    <span class="mx-4 text-sm uppercase opacity-60 md:mx-4">About Me</span>
+    <span class="mx-4 text-sm uppercase opacity-60">About Me</span>
     <div
-        class="flex flex-col gap-4 justify-center items-start mb-4 max-w-2xl md:mx-4"
+        class="flex flex-col gap-4 justify-center items-start mx-4 mb-4 max-w-2xl"
     >
         <h1 class="text-4xl font-bold md:text-5xl">
             Hobbyist Kotlin, TypeScript, and Svelte developer.
@@ -20,14 +20,14 @@
         </p>
     </div>
 
-    <span class="mx-4 mt-8 text-sm uppercase opacity-60 md:mx-4">Projects</span>
-    <p class="mx-4 max-w-2xl opacity-80 md:mx-4">
+    <span class="mx-4 mt-8 text-sm uppercase opacity-60">Projects</span>
+    <p class="mx-4 max-w-2xl opacity-80">
         I've made plenty of projects over a while, but here's the ones I'm most
         proud of. All of them are open-source, so you can look into their
         terrible code.
     </p>
     <section
-        class="grid grid-cols-1 gap-x-6 gap-y-8 m-4 md:mx-4 sm:grid-cols-2 lg:grid-cols-3"
+        class="grid grid-cols-1 gap-x-6 gap-y-8 m-4 sm:grid-cols-2 lg:grid-cols-3"
     >
         <Project url="https://imagi.xylight.us">
             <img

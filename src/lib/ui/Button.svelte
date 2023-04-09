@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Color } from '$lib/colors'
 
-    export let color: Color = Color.accent
+    export let color: Color = Color.secondary
     export let onclick: () => any = () => {}
     export let href = ''
     export let link = false

@@ -18,6 +18,11 @@
             opposite of a professional developer, don't take me seriously with
             the profile picture i use.
         </p>
+        <p>
+            I'm an advocator for free software, and use Linux myself. I also
+            have a guide to help you increase your digital privacy, you can
+            check that out in the navbar.
+        </p>
         <p>This site is still a work in progress.</p>
     </div>
     <div
