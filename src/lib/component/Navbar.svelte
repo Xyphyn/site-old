@@ -7,7 +7,7 @@
 </script>
 
 <nav class="flex sticky flex-row items-center p-4 w-full h-24 md:px-8">
-    <a href="/" class="mr-auto">
+    <a href="/" class="mr-auto" aria-label="Home">
         <svg
             width="48"
             height="48"
@@ -35,6 +35,7 @@
         class="ml-auto"
         color={Color.secondary}
         onclick={() => toggleTheme()}
+        label="Toggle dark theme"
     >
         <Icon
             src={$theme == 'dark'

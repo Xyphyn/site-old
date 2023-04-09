@@ -5,6 +5,7 @@
     export let onclick: () => any = () => {}
     export let href = ''
     export let link = false
+    export let label = ''
     let clazz = ''
     export { clazz as class }
 </script>
@@ -13,6 +14,7 @@
     <button
         on:click={onclick}
         class="flex flex-row items-center gap-2 text-sm rounded-md px-3 py-1.5 transition-all {color} {clazz}"
+        aria-label={label}
     >
         <slot />
     </button>
@@ -20,6 +22,7 @@
     <a
         {href}
         class="flex flex-row items-center gap-2 text-sm rounded-md px-3 py-1.5 transition-all no-underline {color} {clazz}"
+        aria-label={label}
     >
         <slot />
     </a>
