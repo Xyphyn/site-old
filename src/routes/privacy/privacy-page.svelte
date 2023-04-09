@@ -6,15 +6,20 @@
     export let title = ''
 
     let open = false
+
+    let scroll = 0
 </script>
+
+<svelte:window bind:scrollY={scroll} />
 
 <title>{title}</title>
 <div class="flex relative flex-row justify-center p-4 w-full">
     <nav
         class="{open
             ? 'flex'
-            : 'hidden'} p-4 pt-16 sm:pt-8 fixed sm:relative left-0 top-0 flex-col gap-2 w-64 sm:flex sm:bg-transparent
-             sm:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen sm:h-max z-30 shadow-2xl sm:shadow-none"
+            : 'hidden'} p-4 pt-16 md:pt-0 fixed sm:relative left-0 top-0 sm:top-8 flex-col gap-2 w-64 sm:flex sm:bg-transparent
+             sm:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen sm:h-max z-30 shadow-2xl sm:shadow-none table-of-contents"
+        style={`--scroll: ${scroll}px;`}
     >
         <span class="flex flex-row justify-between items-center ml-2 font-bold">
             Table of Contents <Button
@@ -34,3 +39,11 @@
         <slot />
     </div>
 </div>
+
+<style>
+    @media (min-width: 640px) {
+        .table-of-contents {
+            top: max(2rem, var(--scroll));
+        }
+    }
+</style>
