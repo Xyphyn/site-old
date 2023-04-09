@@ -4,6 +4,7 @@
     import { GlobeAlt, Icon, Link, ShieldExclamation } from 'svelte-hero-icons'
 </script>
 
+<title>Xylight</title>
 <div class="grid grid-cols-1 gap-4 m-12 w-full">
     <span class="mx-4 text-sm uppercase opacity-60 md:mx-4">About Me</span>
     <div

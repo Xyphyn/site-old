@@ -4,6 +4,7 @@
     import { Envelope, Icon } from 'svelte-hero-icons'
 </script>
 
+<title>Xylight | About</title>
 <div class="grid grid-cols-1 gap-4 m-12 w-full md:grid-cols-3">
     <div
         class="flex flex-col flex-grow col-span-2 gap-4 justify-center items-start mx-4 max-w-4xl md:mx-4"

@@ -13,7 +13,7 @@
     >
         <slot name="image" />
     </div>
-    <h1 class="mt-4 font-bold"><slot name="title" /></h1>
+    <h4 class="mt-4 font-bold"><slot name="title" /></h4>
     <p class="mt-2 text-sm opacity-90">
         <slot name="description" />
     </p>
