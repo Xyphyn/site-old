@@ -1,9 +1,16 @@
 <script>
     import { Color } from '$lib/colors'
     import Button from '$lib/ui/Button.svelte'
-    import { Icon, Moon, Sun, ComputerDesktop } from 'svelte-hero-icons'
+    import {
+        Icon,
+        Moon,
+        Sun,
+        ComputerDesktop,
+        ChevronDown,
+    } from 'svelte-hero-icons'
     import { theme, toggleTheme } from '../../stores'
-    import { page } from '$app/stores'
+
+    let expanded = false
 </script>
 
 <nav class="flex sticky flex-row items-center p-4 w-full h-24 md:px-8">
@@ -24,7 +31,7 @@
     </a>
     <div
         class="flex flex-row min-w-[12rem] px-4 py-1 rounded-full
-        bg-white/10 dark:bg-white/10 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-4"
+        bg-white dark:bg-white/5 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-4"
     >
         <Button link href="/about" color={Color.secondary}>About</Button>
         <Button link href="/privacy" color={Color.secondary}>
@@ -33,7 +40,7 @@
     </div>
     <Button
         class="ml-auto"
-        color={Color.secondary}
+        color={Color.accent}
         onclick={() => toggleTheme()}
         label="Toggle dark theme"
     >
