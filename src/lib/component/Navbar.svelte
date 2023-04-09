@@ -23,12 +23,14 @@
     </a>
     <div
         class="flex flex-row sm:min-w-[12rem] px-4 py-1 rounded-full
-        bg-white dark:bg-white/5 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-4"
+        bg-white dark:bg-white/5 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-2"
     >
         <Button link href="/about" color={Color.secondary}>About</Button>
         <Button link href="/privacy" color={Color.secondary}>
-            Privacy Guide
+            <span class="hidden sm:inline">Privacy Guide</span>
+            <span class="inline sm:hidden">Guide</span>
         </Button>
+        <Button link href="/setup" color={Color.secondary}>Setup</Button>
     </div>
     <Button
         class="ml-auto"

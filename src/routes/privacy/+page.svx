@@ -4,7 +4,11 @@ title: 'Privacy Guide'
 
 <script>import Quote from './components/Quote.svelte'</script>
 
-# Why should I care?
+# Privacy Guide
+
+This guide is to help you restore your online privacy.
+
+## Why should I care?
 
 <Quote>Why should I care about my privacy if I have nothing to hide?</Quote>
 
