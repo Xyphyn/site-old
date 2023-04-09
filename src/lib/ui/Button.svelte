@@ -12,14 +12,14 @@
 {#if !link}
     <button
         on:click={onclick}
-        class="text-sm rounded-md px-3 py-1.5 transition-all {color} {clazz}"
+        class="flex flex-row items-center gap-2 text-sm rounded-md px-3 py-1.5 transition-all {color} {clazz}"
     >
         <slot />
     </button>
 {:else}
     <a
         {href}
-        class="text-sm rounded-md px-3 py-1.5 transition-all no-underline {color} {clazz}"
+        class="flex flex-row items-center gap-2 text-sm rounded-md px-3 py-1.5 transition-all no-underline {color} {clazz}"
     >
         <slot />
     </a>
