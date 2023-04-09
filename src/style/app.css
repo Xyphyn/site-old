@@ -40,3 +40,11 @@ ul {
 .popIn {
     animation: popin 300ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
+
+#nprogress .bar {
+    @apply bg-black dark:bg-white !important;
+}
+
+#nprogress .peg {
+    @apply hidden !important;
+}
