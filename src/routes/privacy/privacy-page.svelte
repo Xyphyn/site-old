@@ -1,19 +1,20 @@
 <script lang="ts">
     import Button from '$lib/ui/Button.svelte'
+    import { onMount } from 'svelte'
     import { Bars3, Icon, XMark } from 'svelte-hero-icons'
 
     export let title = ''
 
-    let open = true
+    let open = false
 </script>
 
 <title>{title}</title>
-<div class="flex flex-row justify-center p-4 w-full">
+<div class="flex relative flex-row justify-center p-4 w-full">
     <nav
         class="{open
             ? 'flex'
-            : 'hidden'} p-4 pt-16 fixed left-0 top-0 sm:relative flex-col gap-2 w-64 sm:flex sm:bg-transparent
-             sm:dark:bg-transparent bg-white dark:bg-slate-800 h-screen z-30 shadow-2xl sm:shadow-none"
+            : 'hidden'} p-4 pt-16 sm:pt-8 sticky left-0 top-0 sm:relative flex-col gap-2 w-64 sm:flex sm:bg-transparent
+             sm:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen sm:h-max z-30 shadow-2xl sm:shadow-none"
     >
         <span class="flex flex-row justify-between items-center ml-2 font-bold">
             Table of Contents <Button

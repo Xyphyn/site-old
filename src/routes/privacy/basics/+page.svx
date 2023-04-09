@@ -108,4 +108,34 @@ Considering most of the content we consume is on the internet, we need a web bro
     </Card>
 </div>
 
-Personally, I use **Brave**, because of its defaults
+Personally, I use **Brave**, because of its good defaults and great fingerprinting protection while maintaining usability. Librewolf is also a great choice if you don't want to support Chromium's monopoly on browsers, and it has the best defaults for privacy.
+
+### Brave Settings
+
+Some of Brave's default settings aren't optimal. Here's what you should tweak.
+
+-   **Uncheck**: Privacy & Security > Allow privacy-preserving product analytics
+-   **Uncheck**: Privacy & Security > Send daily usage ping
+    -   These aren't necessary if you're fine with anonymous telemetry.
+-   Shields > Trackers & ads blocking > **Aggressive**
+-   Shields > Block fingerprinting > **Strict**
+    -   This will break a few sites, for example, system dark theme won't be recognized. If you don't want this, set it to **Standard**
+-   Block cookies > **Only cross-site**
+-   **Uncheck**: Extensions > Everything
+
+### Clean on exit
+
+A great way to improve privacy is to clear cookies on exit.
+
+-   **Check**: Privacy & Security > Cookies > Clear cookies and site data when you close all windows
+    -   This will log you out of sites and clear your preferences on some when you close windows. To stay logged in to certain sites, add exceptions under **Sites that can always use cookies**.
+
+# Accounts
+
+People regularly sign up for random services without thought. You may sign up for a streaming service, or for a discount on a fast food place, but you should always consider what will happen to your data down the line.
+
+Almost every website requires an account nowadays. Websites owned by large companies often have tracking, and tracker protection is less useful if you have an account and the website can link what happens to you regardless.
+
+When you go onto a website, ask yourself: **Do I really need an account for this?**
+
+If you want to use the service temporarily, but not for a while, use a service like <a href="https://temp-mail.org" class="underline">temp-mail.org</a> to create a temporary account.
