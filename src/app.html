@@ -9,18 +9,18 @@
                     window.matchMedia('(prefers-color-scheme: dark)').matches)
 
             if (dark()) {
-                document.querySelector('html').classList.add('dark')
+                document.documentElement.classList.add('dark')
             } else {
-                document.querySelector('html').classList.remove('dark')
+                document.documentElement.classList.remove('dark')
             }
 
             window
                 .matchMedia('(prefers-color-scheme: dark)')
                 .addEventListener('change', (event) => {
                     if (dark()) {
-                        document.querySelector('html').classList.add('dark')
+                        document.documentElement.classList.add('dark')
                     } else {
-                        document.querySelector('html').classList.remove('dark')
+                        document.documentElement.classList.remove('dark')
                     }
                 })
         </script>
