@@ -9,7 +9,6 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex({
 		extensions: ['.md', '.svx'],
 		layout: 'src/routes/privacy/privacy-page.svelte',
-		
 	})],
 
 	extensions: ['.svelte', '.md', '.svx'],

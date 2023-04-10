@@ -17,6 +17,9 @@
     let open = false
 
     let scroll = 0
+
+    import './privacy-page.css'
+    import './code.css'
 </script>
 
 <svelte:window bind:scrollY={scroll} />
@@ -26,25 +29,26 @@
     <nav
         class="{open
             ? 'flex'
-            : 'hidden'} p-4 pt-16 md:pt-0 fixed sm:relative left-0 top-0 sm:top-8 flex-col gap-2 w-64 sm:flex sm:bg-transparent
-             sm:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen sm:h-max z-30 shadow-2xl sm:shadow-none table-of-contents"
+            : 'hidden'} p-4 pt-16 lg:pt-0 fixed lg:relative left-0 top-0 lg:top-8 flex-col gap-2 w-64 lg:flex lg:bg-transparent
+             lg:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen lg:h-max z-30 shadow-2xl lg:shadow-none table-of-contents"
         style={`--scroll: ${scroll}px;`}
     >
         <span class="flex flex-row justify-between items-center ml-2 font-bold">
             Table of Contents <Button
                 onclick={() => (open = false)}
-                class="w-max sm:hidden"
+                class="w-max lg:hidden"
             >
                 <Icon src={XMark} size="20" />
             </Button>
         </span>
         <Button link href="/privacy">Main Page</Button>
         <Button link href="/privacy/basics">The Basics</Button>
+        <Button link href="/privacy/traffic">Network Traffic</Button>
     </nav>
-    <div class="flex flex-col gap-4 w-full max-w-2xl text-left sm:m-8">
+    <div class="flex flex-col gap-4 w-full max-w-2xl text-left lg:mx-8">
         <Button
             onclick={() => (open = true)}
-            class="relative -left-3 py-3 w-max sm:hidden"
+            class="relative -left-3 py-3 w-max lg:hidden"
         >
             <Icon src={Bars3} size="20" />
         </Button>
@@ -69,7 +73,7 @@
 </div>
 
 <style>
-    @media (min-width: 640px) {
+    @media (min-width: 1024px) {
         .table-of-contents {
             top: max(2rem, var(--scroll));
         }

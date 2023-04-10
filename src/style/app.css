@@ -26,6 +26,10 @@ ul {
     @apply ml-4 list-disc;
 }
 
+code {
+    @apply px-2 py-1 text-sm rounded-md dark:bg-zinc-800 bg-slate-200;
+}
+
 @keyframes popIn {
     from {
         transform: translateY(12px);

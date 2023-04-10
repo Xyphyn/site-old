@@ -1,6 +1,7 @@
 ---
 title: 'The Basics'
 back: '/privacy'
+next: '/privacy/traffic'
 ---
 
 <script>
@@ -21,7 +22,7 @@ The following are the recommended Linux distros for daily usage:
 <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
     <Card url="https://fedoraproject.org/workstation/">
         <img
-            src="https://fedoraproject.org/favicon.ico"
+            src="/img/fedora.ico"
             alt="The Fedora logo"
             slot="image"
         />
@@ -37,7 +38,7 @@ The following are the recommended Linux distros for daily usage:
     </Card>
     <Card url="https://get.opensuse.org/tumbleweed/">
         <img
-            src="https://static.opensuse.org/favicon.svg"
+            src="/img/opensuse.svg"
             alt="The OpenSUSE logo"
             slot="image"
         />
@@ -51,8 +52,8 @@ The following are the recommended Linux distros for daily usage:
         </svelte:fragment>
     </Card><Card url="https://silverblue.fedoraproject.org/">
         <img
-            src="https://silverblue.fedoraproject.org/public/silverblue-logo.svg"
-            alt="The Fedora logo"
+            src="/img/silverblue.svg"
+            alt="The Fedora Silverblue logo"
             width="48"
             height="48"
             slot="image"
@@ -75,8 +76,8 @@ Considering most of the content we consume is on the internet, we need a web bro
 <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
 <Card url="https://librewolf.net/">
         <img
-            src="https://librewolf.net/icon.svg"
-            alt="The Firefox logo"
+            src="/img/librewolf.svg"
+            alt="The Librewolf logo"
             width="48"
             height="48"
             slot="image"
@@ -92,7 +93,7 @@ Considering most of the content we consume is on the internet, we need a web bro
     </Card>
     <Card url="https://brave.com">
         <img
-            src="https://brave.com/static-assets/images/brave-logo-sans-text.svg"
+            src="/img/brave.svg"
             alt="The Brave logo"
             width="36"
             height="36"

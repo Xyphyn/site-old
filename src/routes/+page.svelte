@@ -31,7 +31,7 @@
     >
         <Project url="https://imagi.xylight.us">
             <img
-                src="https://imagi.xylight.us/logo.svg"
+                src="/img/imagi.svg"
                 width={36}
                 height={36}
                 class="bg-white rounded-full dark:bg-zinc-800"
@@ -50,7 +50,7 @@
         </Project>
         <Project url="https://neptune.xylight.us">
             <img
-                src="https://neptune.xylight.us/img/logo.svg"
+                src="/img/neptune.svg"
                 width={36}
                 height={36}
                 class="bg-white rounded-full dark:bg-zinc-800"

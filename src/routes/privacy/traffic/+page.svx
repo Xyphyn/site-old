@@ -1,0 +1,164 @@
+---
+title: 'Network Traffic'
+back: '/privacy/basics'
+---
+
+<script>
+    import Card from '../components/Card.svelte'
+    import { Icon, Link } from 'svelte-hero-icons'
+
+</script>
+
+# Network Traffic
+
+Network traffic to certain websites can be viewed and tracked if not careful. We'll cover all 3 goals, **security**, **privacy**, and **anonymity**.
+
+## Security
+
+To aim for security, we'll need to do some tweaking to our DNS and other configs.
+
+### DNS
+
+DNS, or **Domain Name System**, is essentially what allows us to go to **google.com** instead of having to type long IPs, like `142.251.46.174`. Your router probably comes with a default one, but it's probably not very private or secure. Attackers can likely look at your DNS traffic and see what websites you are going to, like `cornhub.com` or `onlyceilingfans.com`. You can probably change your DNS provider though.
+
+Here are some good DNS providers:
+
+<div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+    <Card url="https://nextdns.io">
+        <img
+            src="/img/nextdns.ico"
+            alt="The NextDNS logo"
+            slot="image"
+        />
+        <h3 slot="title">NextDNS</h3>
+        <p slot="description">
+            NextDNS is a customizable DNS server where you can choose which blocklists you want to use. It supports DNS encryption, but it is limited to 300,000 free queries per month.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>nextdns.io</span>
+        </svelte:fragment>
+    </Card>
+    <Card url="https://quad9.net">
+        <img
+            src="/img/quad9.svg"
+            alt="The NextDNS logo"
+            slot="image"
+        />
+        <h3 slot="title">Quad9</h3>
+        <p slot="description">
+            Quad9 is a private DNS that supports DNS encryption and blocks malware.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>quad9.net</span>
+        </svelte:fragment>
+    </Card>
+</div>
+
+The above providers support **DNS over TLS** and **DNS over HTTPS**. These are features that encrypt your DNS traffic, so that attackers can't view it. **This does not provide privacy from your ISP, but security from attackers.** It technically encrypts your DNS queries, but your ISP can still see it through **Server Name Indication**, or SNI. **ESNI** is a technology that encrypts that as well, but until that is widespread you are not private from your ISP. We will cover that in the privacy section later.
+
+### Enabling encrypted DNS
+
+Enabling encrypted DNS will depend on your distro and provider. On a distro with `NetworkManager`, if you set your provider to one that supports encrypted DNS, it might work automatically. You can test this by installing `ngrep` and running `ngrep port 53`. Run `ping gnu.org`, and you should see no output. Then if you run `ngrep port 853` and run `ping gnu.org`, you should see garbled text.
+
+**Changing DNS on GNOME**
+
+-   Open Settings.
+-   Click **Network** on the sidebar.
+-   Click the settings gear on the network you want to change.
+-   Click `IPv4` on the top nav.
+-   Uncheck "Automatic" for **DNS**.
+-   Input the address for your DNS provider.
+-   Hit **Apply** on the top right.
+
+However, using `systemd-resolved` is recommended instead.
+
+```bash
+dnf install systemd-resolved # Use the package manager of your distro
+nano /etc/systemd/resolved.conf # Use any editor of your choice
+```
+
+If you are using **NextDNS**, go to your `my.nextdns.io`. They provide configs.
+
+`/etc/systemd/resolved.conf`
+
+```ini
+[Resolve]
+DNS=12.34.56.78#dns.example.com
+DNS=87.65.43.21#dns2.example.com
+DNSOverTLS=yes
+DNSSEC=allow-downgrade
+```
+
+And then, if you are using `NetworkManager` (if you don't know, you probably are), edit
+
+`/etc/NetworkManager/NetworkManager.conf`
+
+```ini
+[main]
+dns=systemd-resolved
+```
+
+and then make sure to enable the services.
+
+```bash
+systemctl enable systemd-resolved
+systemctl start systemd-resolved
+systemctl restart NetworkManager
+```
+
+## HTTPS
+
+Contrary to popular belief, **VPN**s do not provide extra security. They do have a benefit that will be discussed later, however. Websites with **HTTPS** (which are incredibly common nowadays) are encrypted already, meaning nobody can see your network traffic. The older **HTTP** standard does not provide encryption, so it's recommended to not visit them.
+
+### HTTPS-only mode
+
+We recommend enabling this to show a warning before visiting HTTP sites. Change these settings to enable them in recommended browsers:
+
+**Brave**
+
+-   **Check**: Privacy & Security > Security > Always use secure connections
+
+**Librewolf**
+
+Librewolf has HTTPS-only on by default.
+
+# Privacy
+
+To be private, VPNs are a good choice, as they route your traffic through an encrypted tunnel to your VPN provider rather than your ISP. Through this, your ISP can't read any of your traffic, even DNS traffic. However, if your VPN provider is dishonest, it can be catastrophic. Here are some trusted and good VPNs.
+
+## VPNs
+
+<div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+    <Card url="https://protonvpn.com">
+        <img
+            src="/img/protonvpn.webp"
+            alt="The ProtonVPN logo"
+            slot="image"
+        />
+        <h3 slot="title">ProtonVPN</h3>
+        <p slot="description">
+            Proton VPN is owned by Proton AG in Switzerland, which has good privacy laws. It offers a great free tier, and a more featured premium tier. It supports modern VPN protocols such as Wireguard.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>protonvpn.com</span>
+        </svelte:fragment>
+    </Card>
+    <Card url="https://mullvad.net">
+        <img
+            src="/img/mullvad.svg"
+            alt="The Mullvad logo"
+            slot="image"
+        />
+        <h3 slot="title">Mullvad</h3>
+        <p slot="description">
+            Mullvad is a great inexpensive VPN with a major focus on security and transparency. They are based in Sweden.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>mullvad.net</span>
+        </svelte:fragment>
+    </Card>
+</div>
