@@ -10,8 +10,9 @@
     } from 'svelte-hero-icons'
 
     export let title = ''
-    export let back: string | undefined = undefined
-    export let next: string | undefined = undefined
+
+    export let back = ''
+    export let next = ''
 
     let open = false
 
@@ -49,19 +50,19 @@
         </Button>
         <slot />
         <div class="flex justify-between items-center w-full">
-            <Button disabled={!back} link href={back || ''} class="mr-auto">
+            <Button disabled={back == ''} link href={back} class="mr-auto">
                 <Icon size="16" mini src={ArrowLeft} />
                 Back
             </Button>
             <Button
-                disabled={!next}
+                disabled={next == ''}
                 link
-                href={next || ''}
+                href={next}
                 color={Color.accent}
                 class="ml-auto"
             >
-                <Icon size="16" mini src={ArrowRight} />
                 Next
+                <Icon size="16" mini src={ArrowRight} />
             </Button>
         </div>
     </div>
