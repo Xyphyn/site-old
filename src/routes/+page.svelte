@@ -20,14 +20,14 @@
         </p>
     </div>
 
-    <span class="mx-4 mt-8 text-sm uppercase opacity-60">Projects</span>
+    <span class="mx-4 text-sm uppercase opacity-60">Projects</span>
     <p class="mx-4 max-w-2xl opacity-80">
         I've made plenty of projects over a while, but here's the ones I'm most
         proud of. All of them are open-source, so you can look into their
         terrible code.
     </p>
     <section
-        class="grid grid-cols-1 gap-x-6 gap-y-8 m-4 sm:grid-cols-2 lg:grid-cols-3"
+        class="grid grid-cols-1 gap-x-6 gap-y-8 mx-4 sm:grid-cols-2 lg:grid-cols-3"
     >
         <Project url="https://imagi.xylight.us">
             <img

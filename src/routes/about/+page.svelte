@@ -18,10 +18,15 @@
             opposite of a professional developer, don't take me seriously with
             the profile picture i use.
         </p>
-        <p>
-            I'm an advocator for free software, and use Linux myself. I also
-            have a guide to help you increase your digital privacy, you can
-            check that out in the navbar.
+        <p class="inline">
+            This site was created because my previous site was amazingly bad. i
+            should be in jail for that crime of design. <Button
+                link
+                href="https://astro-site-pearl.vercel.app/"
+                class="inline mx-0 w-max text-xs opacity-50"
+            >
+                (here if you want to vomit.)
+            </Button>
         </p>
         <p>This site is still a work in progress.</p>
     </div>
