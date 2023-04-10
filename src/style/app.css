@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body,html {
-    @apply p-0 m-0;
+    @apply p-0 m-0 scroll-smooth;
 }
 
 body {

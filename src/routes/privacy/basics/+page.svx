@@ -1,5 +1,6 @@
 ---
 title: 'The Basics'
+back: '/privacy'
 ---
 
 <script>

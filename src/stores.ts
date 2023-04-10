@@ -4,8 +4,10 @@ export const theme = writable<'system' | 'light' | 'dark'>('system')
 
 export const toggleTheme = () => {
     theme.update((theme) => {
-        if (theme == 'light' || theme == 'system') {
+        if (theme == 'light') {
             return 'dark'
+        } else if (theme == 'dark') {
+            return 'system'
         } else {
             return 'light'
         }
@@ -32,7 +34,6 @@ if (typeof localStorage != 'undefined') {
             } else {
                 html?.classList.toggle('dark', theme === 'dark')
             }
-            
 
             localStorage.setItem('theme', theme)
         }

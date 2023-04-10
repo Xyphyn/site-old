@@ -1,9 +1,17 @@
 <script lang="ts">
+    import { Color } from '$lib/colors'
     import Button from '$lib/ui/Button.svelte'
-    import { onMount } from 'svelte'
-    import { Bars3, Icon, XMark } from 'svelte-hero-icons'
+    import {
+        ArrowLeft,
+        ArrowRight,
+        Bars3,
+        Icon,
+        XMark,
+    } from 'svelte-hero-icons'
 
     export let title = ''
+    export let back: string | undefined = undefined
+    export let next: string | undefined = undefined
 
     let open = false
 
@@ -33,10 +41,29 @@
         <Button link href="/privacy/basics">The Basics</Button>
     </nav>
     <div class="flex flex-col gap-4 w-full max-w-2xl text-left sm:m-8">
-        <Button onclick={() => (open = true)} class="py-3 w-max sm:hidden -left-3 relative">
+        <Button
+            onclick={() => (open = true)}
+            class="relative -left-3 py-3 w-max sm:hidden"
+        >
             <Icon src={Bars3} size="20" />
         </Button>
         <slot />
+        <div class="flex justify-between items-center w-full">
+            <Button disabled={!back} link href={back || ''} class="mr-auto">
+                <Icon size="16" mini src={ArrowLeft} />
+                Back
+            </Button>
+            <Button
+                disabled={!next}
+                link
+                href={next || ''}
+                color={Color.accent}
+                class="ml-auto"
+            >
+                <Icon size="16" mini src={ArrowRight} />
+                Next
+            </Button>
+        </div>
     </div>
 </div>
 

@@ -1,5 +1,6 @@
 ---
 title: 'Privacy Guide'
+next: '/privacy/basics'
 ---
 
 <script>import Quote from './components/Quote.svelte'</script>

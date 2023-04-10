@@ -1,3 +1,4 @@
+<title>Setup</title>
 <div class="flex flex-col gap-4 m-12 w-full">
     <div
         class="flex flex-col flex-grow col-span-2 gap-4 justify-center items-start mx-4 max-w-2xl md:mx-4"
