@@ -6,6 +6,26 @@
   		<link rel="alternate icon" href="%sveltekit.assets%/favicon-dark.png" media="(prefers-color-scheme: dark)">
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="James, a hobbyist developer's website." />
+			<script>
+				const dark = () => localStorage.theme == 'dark' 
+				|| ((!localStorage.theme || localStorage.theme == 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+				if (dark()) {
+					document.querySelector('html').classList.add('dark')
+				} else {
+					document.querySelector('html').classList.remove('dark')
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+					
+				if (dark()) {
+					document.querySelector('html').classList.add('dark')
+				} else {
+					document.querySelector('html').classList.remove('dark')
+				}
+				})
+			</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

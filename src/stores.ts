@@ -32,6 +32,7 @@ if (typeof localStorage != 'undefined') {
             } else {
                 html?.classList.toggle('dark', theme === 'dark')
             }
+            
 
             localStorage.setItem('theme', theme)
         }

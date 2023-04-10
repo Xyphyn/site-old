@@ -32,8 +32,8 @@
         <Button link href="/privacy">Main Page</Button>
         <Button link href="/privacy/basics">The Basics</Button>
     </nav>
-    <div class="flex flex-col gap-4 m-4 w-full max-w-2xl text-left sm:m-8">
-        <Button onclick={() => (open = true)} class="py-3 w-max sm:hidden">
+    <div class="flex flex-col gap-4 w-full max-w-2xl text-left sm:m-8">
+        <Button onclick={() => (open = true)} class="py-3 w-max sm:hidden -left-3 relative">
             <Icon src={Bars3} size="20" />
         </Button>
         <slot />
