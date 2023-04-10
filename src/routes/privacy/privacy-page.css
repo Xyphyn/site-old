@@ -5,11 +5,3 @@ a {
 ol {
     @apply list-decimal;
 }
-
-h1 {
-    @apply mt-8;
-}
-
-h2 {
-    @apply mt-4;
-}

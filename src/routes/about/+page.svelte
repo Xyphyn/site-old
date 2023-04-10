@@ -7,7 +7,7 @@
 <title>Xylight | About</title>
 <div class="grid grid-cols-1 gap-4 m-12 w-full md:grid-cols-3">
     <div
-        class="flex flex-col flex-grow col-span-2 gap-4 items-start mx-4 max-w-4xl sm:mt-16 md:mx-4"
+        class="flex flex-col flex-grow col-span-2 gap-4 items-start mx-4 max-w-4xl md:mx-4"
     >
         <h1 class="text-4xl font-bold md:text-5xl">
             I'm James, and I make stuff.
@@ -28,7 +28,25 @@
                 (here if you want to vomit.)
             </Button>
         </p>
-        <p>This site is still a work in progress.</p>
+        <p>
+            I've recently gotten into web design more, and I think I've improved
+            a bit (certainly over that excuse of a website I mentioned.)
+        </p>
+        <p>
+            I doubt anyone would actually want to talk to me, but if you for
+            some reason do, you can contact me through my socials on the right
+            (or bottom), preferably Discord or my email.
+        </p>
+        <p>
+            I talk a lot in the <b>Arch Linux</b>
+            and
+            <b>Microsoft Community</b>
+            (despite not using a single Microsoft product) Discord servers.
+        </p>
+        <p>
+            Wow, this is actually difficult to fill up this section since
+            there's nothing interesting about me.
+        </p>
     </div>
     <div
         class="flex flex-col flex-1 col-span-1 gap-4 justify-center items-center mx-4 max-w-4xl md:items-start md:mx-4"
@@ -40,7 +58,9 @@
             class="rounded-lg shadow-lg rotate-3 md:w-full"
             alt="Xylight/James's profile."
         />
-        <div class="flex flex-col gap-2 items-start w-full">
+        <div
+            class="flex flex-row flex-wrap gap-2 justify-center w-full sm:items-start sm:justify-start sm:flex-col"
+        >
             <Button
                 color={Color.secondary}
                 link
