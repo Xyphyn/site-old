@@ -5,7 +5,7 @@
     import { theme, toggleTheme } from '../../stores'
 </script>
 
-<nav class="flex sticky flex-row items-center p-4 w-full h-24 md:px-8">
+<nav class="flex sticky flex-row items-center p-4 w-full h-24">
     <a href="/" class="mr-auto" aria-label="Home">
         <svg
             width="48"
