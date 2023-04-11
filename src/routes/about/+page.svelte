@@ -109,10 +109,10 @@
                 Xylight#7277
             </Button>
             <div class="w-full border-b border-black/10 dark:border-white/10" />
-            <Button color={Color.secondary} link href="mailto:james@xylight.us">
+            <Button link href="mailto:xylight@xylight.us">
                 <Icon src={Envelope} size="18" solid />
 
-                james@xylight.us
+                xylight@xylight.us
             </Button>
         </div>
     </div>
