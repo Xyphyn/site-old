@@ -9,6 +9,8 @@ next: '/privacy/basics'
 
 This guide is to help you restore your online privacy.
 
+_I'm an idiot, so if you notice something wrong with this guide, feel free to make a pull request on the [GitHub](https://github.com/Xyphyn/Site)_
+
 ## Why should I care?
 
 <Quote>Why should I care about my privacy if I have nothing to hide?</Quote>
