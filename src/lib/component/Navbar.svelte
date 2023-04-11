@@ -1,11 +1,23 @@
 <script>
     import { Color } from '$lib/colors'
     import Button from '$lib/ui/Button.svelte'
-    import { Icon, Moon, Sun, ComputerDesktop } from 'svelte-hero-icons'
+    import {
+        Icon,
+        Moon,
+        Sun,
+        ComputerDesktop,
+        ChevronDown,
+        XMark,
+    } from 'svelte-hero-icons'
     import { theme, toggleTheme } from '../../stores'
+    import { fade, scale } from 'svelte/transition'
+
+    export let expanded = false
 </script>
 
-<nav class="flex sticky flex-row items-center p-4 w-full h-24">
+<nav
+    class="flex sticky top-0 left-0 z-10 flex-row items-center p-4 w-full h-24"
+>
     <a href="/" class="mr-auto" aria-label="Home">
         <svg
             width="48"
@@ -21,16 +33,54 @@
             />
         </svg>
     </a>
-    <div
-        class="flex flex-row sm:min-w-[12rem] px-4 py-1 rounded-full
-        bg-white dark:bg-white/5 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-2"
-    >
-        <Button link href="/about" color={Color.secondary}>About</Button>
-        <Button link href="/privacy" color={Color.secondary}>
-            <span class="hidden sm:inline">Privacy Guide</span>
-            <span class="inline sm:hidden">Guide</span>
+    <div class="flex flex-col items-center">
+        <Button
+            class="sm:hidden"
+            color={Color.accent}
+            onclick={() => (expanded = true)}
+        >
+            Menu <Icon src={ChevronDown} size="16" mini />
         </Button>
-        <Button link href="/setup" color={Color.secondary}>Setup</Button>
+        <div
+            class="hidden sm:flex flex-row sm:min-w-[12rem] px-4 py-1 rounded-full
+        bg-white dark:bg-white/5 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-2"
+        >
+            <Button link href="/about" color={Color.secondary}>About</Button>
+            <Button link href="/privacy" color={Color.secondary}>
+                <span class="hidden sm:inline">Privacy Guide</span>
+                <span class="inline sm:hidden">Guide</span>
+            </Button>
+            <Button link href="/setup" color={Color.secondary}>Setup</Button>
+        </div>
+        {#if expanded}
+            <div class="fixed top-0 inset-4 max-w-full sm:hidden">
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <div
+                    class="fixed top-0 left-0 w-screen h-screen backdrop-blur-sm bg-black/30"
+                    transition:fade={{ duration: 200 }}
+                    on:click={() => (expanded = false)}
+                />
+                <div
+                    class="flex fixed inset-x-4 top-4 flex-col gap-2 items-start p-4 max-w-full bg-white rounded-lg shadow-lg origin-top h-max dark:bg-zinc-800"
+                    transition:scale={{ duration: 200, start: 0.9 }}
+                >
+                    <span class="p-1 mx-2 mt-2 text-lg font-bold">
+                        Navigation
+                    </span>
+                    <Button
+                        onclick={() => (expanded = false)}
+                        class="absolute top-0 right-0 px-2 py-2 m-4 mt-6"
+                    >
+                        <Icon src={XMark} size="20" />
+                    </Button>
+                    <Button link href="/about" class="w-full">About</Button>
+                    <Button link href="/privacy" class="w-full">
+                        Privacy Guide
+                    </Button>
+                    <Button link href="/setup" class="w-full">Setup</Button>
+                </div>
+            </div>
+        {/if}
     </div>
     <Button
         class="ml-auto"
