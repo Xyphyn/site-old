@@ -6,7 +6,7 @@
 
 <a
     href={url}
-    class="flex flex-col items-start p-6 w-full rounded-lg transition-all cursor-pointer hover:bg-slate-100 hover:dark:bg-zinc-800 group popIn"
+    class="flex flex-col items-start p-6 w-full no-underline rounded-lg transition-all cursor-pointer hover:bg-slate-100 hover:dark:bg-zinc-800 group popIn"
 >
     <div
         class="grid place-items-center w-10 h-10 rounded-full shadow-lg bg-slate-300 dark:bg-zinc-700"

@@ -162,3 +162,9 @@ To be private, VPNs are a good choice, as they route your traffic through an enc
         </svelte:fragment>
     </Card>
 </div>
+
+# Anonymity
+
+If you want to completely anonymize yourself online, you should use **TOR**.
+
+**TOR** works by routing your network traffic through multiple encrypted layers, meaning your IP address is different and you appear to come from a completely different computer each time you connect.
