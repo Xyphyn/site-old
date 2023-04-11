@@ -42,7 +42,7 @@ code {
 }
 
 .popIn {
-    animation: popin 300ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    animation: popin 500ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
 #nprogress .bar {
