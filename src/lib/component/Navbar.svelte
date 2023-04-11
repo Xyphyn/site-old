@@ -16,7 +16,7 @@
 </script>
 
 <nav
-    class="flex sticky top-0 left-0 z-10 flex-row items-center p-4 w-full h-24"
+    class="flex sticky top-0 left-0 z-10 flex-row gap-2 items-center p-4 w-full h-24"
 >
     <a href="/" class="mr-auto" aria-label="Home">
         <svg
@@ -33,9 +33,9 @@
             />
         </svg>
     </a>
-    <div class="flex flex-col items-center">
+    <div class="flex flex-row justify-center items-center">
         <Button
-            class="sm:hidden"
+            class="ml-auto sm:hidden"
             color={Color.accent}
             onclick={() => (expanded = true)}
         >
@@ -45,12 +45,13 @@
             class="hidden sm:flex flex-row sm:min-w-[12rem] px-4 py-1 rounded-full
         bg-white dark:bg-white/5 items-center justify-center shadow-md border-t border-t-transparent dark:border-t-white/10 gap-2"
         >
-            <Button link href="/about" color={Color.secondary}>About</Button>
-            <Button link href="/privacy" color={Color.secondary}>
+            <Button link href="/about">About</Button>
+            <Button link href="/projects">Projects</Button>
+            <Button link href="/privacy">
                 <span class="hidden sm:inline">Privacy Guide</span>
                 <span class="inline sm:hidden">Guide</span>
             </Button>
-            <Button link href="/setup" color={Color.secondary}>Setup</Button>
+            <Button link href="/setup">Setup</Button>
         </div>
         {#if expanded}
             <div class="fixed top-0 inset-4 max-w-full sm:hidden">
@@ -73,17 +74,44 @@
                     >
                         <Icon src={XMark} size="20" />
                     </Button>
-                    <Button link href="/about" class="w-full">About</Button>
-                    <Button link href="/privacy" class="w-full">
+                    <Button
+                        link
+                        href="/about"
+                        class="w-full"
+                        onclick={() => (expanded = false)}
+                    >
+                        About
+                    </Button>
+                    <Button
+                        link
+                        href="/projects"
+                        class="w-full"
+                        onclick={() => (expanded = false)}
+                    >
+                        Projects
+                    </Button>
+                    <Button
+                        link
+                        href="/privacy"
+                        class="w-full"
+                        onclick={() => (expanded = false)}
+                    >
                         Privacy Guide
                     </Button>
-                    <Button link href="/setup" class="w-full">Setup</Button>
+                    <Button
+                        link
+                        href="/setup"
+                        class="w-full"
+                        onclick={() => (expanded = false)}
+                    >
+                        Setup
+                    </Button>
                 </div>
             </div>
         {/if}
     </div>
     <Button
-        class="ml-auto"
+        class="sm:ml-auto"
         color={Color.accent}
         onclick={() => toggleTheme()}
         label="Toggle dark theme"

@@ -30,6 +30,7 @@
             ? 'opacity-50 pointer-events-none cursor-default'
             : ''} {color} {clazz}"
         aria-label={label}
+        on:click={onclick}
     >
         <slot />
     </a>
