@@ -15,9 +15,7 @@
     export let expanded = false
 </script>
 
-<nav
-    class="flex sticky top-0 left-0 z-10 flex-row gap-2 items-center p-4 w-full h-24"
->
+<nav class="flex z-10 flex-row gap-2 items-center p-4 w-full h-24">
     <a href="/" class="mr-auto" aria-label="Home">
         <svg
             width="48"
