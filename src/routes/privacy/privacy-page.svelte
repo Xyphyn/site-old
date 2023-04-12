@@ -29,7 +29,7 @@
     <nav
         class="{open
             ? 'flex'
-            : 'hidden'} p-4 pt-16 lg:pt-0 fixed lg:relative left-0 top-0 lg:top-8 flex-col gap-2 w-64 lg:flex lg:bg-transparent
+            : 'hidden'} p-4 pt-16 lg:p-0 fixed lg:relative left-0 top-0 lg:top-4 flex-col gap-2 w-64 lg:flex lg:bg-transparent
              lg:dark:bg-transparent bg-white dark:bg-zinc-900 h-screen lg:h-max z-30 shadow-2xl lg:shadow-none table-of-contents"
         style={`--scroll: ${scroll}px;`}
     >
@@ -42,8 +42,9 @@
             </Button>
         </span>
         <Button link href="/privacy">Main Page</Button>
-        <Button link href="/privacy/basics">The Basics</Button>
-        <Button link href="/privacy/traffic">Network Traffic</Button>
+        <Button link href="/privacy/content/basics">The Basics</Button>
+        <Button link href="/privacy/content/traffic">Network Traffic</Button>
+        <Button link href="/privacy/content/encryption">Encryption</Button>
     </nav>
     <div class="flex flex-col gap-4 w-full max-w-2xl text-left lg:mx-8">
         <Button
@@ -75,7 +76,7 @@
 <style>
     @media (min-width: 1024px) {
         .table-of-contents {
-            top: max(2rem, var(--scroll));
+            top: max(1rem, var(--scroll));
         }
     }
 </style>

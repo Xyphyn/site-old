@@ -1,11 +1,11 @@
 ---
 title: 'The Basics'
 back: '/privacy'
-next: '/privacy/traffic'
+next: '/privacy/content/traffic'
 ---
 
 <script>
-    import Card from '../components/Card.svelte'
+    import Card from '../../components/Card.svelte'
     import { Icon, Link } from 'svelte-hero-icons'
 </script>
 

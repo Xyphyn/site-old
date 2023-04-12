@@ -1,0 +1,162 @@
+---
+title: 'Encryption'
+back: '/privacy/content/traffic'
+---
+
+<script>
+    import Card from '../../components/Card.svelte'
+    import { Icon, Link } from 'svelte-hero-icons'
+</script>
+
+# Encryption
+
+**Encryption** is the process of encoding information in a way that only people who have the correct authorization may decrypt and access the data. It is beneficial to both **security** and **privacy**, as encrypted data can't be stolen, nor can it be collected, unless a provider has the encryption keys.
+
+## Disk Encryption
+
+**Linux** supports **disk encryption** via **LUKS**. If you want to enable it follow these steps. <span class="text-xs underline align-top">[Source](https://www.baeldung.com/linux/encrypt-partition)</span>
+
+**Note**: disk encryption can lead to data loss if you forget your password, follow these steps incorrectly, or something else goes wrong. This will not increase **online** security and privacy, which is the main focus of this guide.
+
+**Make sure to backup your data, as we will be formatting the partition.**
+
+### Install cryptsetup
+
+Install `cryptsetup` to setup disk encryption.
+
+```bash
+dnf install cryptsetup # as usual, use the package manager of your distro
+```
+
+Make sure it's verified by running
+
+```sh
+cryptsetup --version
+cryptsetup x.x.x
+```
+
+### Choose a partition
+
+Run `lsblk` to view your storage devices:
+
+```
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0 931.5G  0 disk
+├─sda1   8:1    0     1G  0 part /boot
+├─sda2   8:2    0     8G  0 part [SWAP]
+└─sda3   8:3    0 922.5G  0 part /
+sdb      8:16   0 465.8G  0 disk
+├─sdb1   8:17   0   100M  0 part
+├─sdb2   8:18   0    16M  0 part
+├─sdb3   8:19   0 465.1G  0 part
+└─sdb4   8:20   0   604M  0 part
+zram0  254:0    0   7.8G  0 disk [SWAP]
+```
+
+Make sure to remember the **partition** you want to encrypt. **The partition is the label with a number on it, like `sdb1`.** (drive sdb, partition 1). If using an NVMe drive you may see `nvme0n1` or something similar.
+
+### Format
+
+(remember to replace sdb1 with the drive you are encrypting.)
+
+```sh
+cryptsetup luksFormat --type luks1 /dev/sdb1
+
+WARNING!
+========
+This will overwrite data on /dev/sdb1 irrevocably.
+
+Are you sure? (Type 'yes' in capital letters): YES # ONLY DO THIS IF YOU ARE SURE.
+```
+
+You will be asked for a passphrase. (You will not see the text as you are typing, this is intentional.)
+
+**Make sure to remember or store it somewhere.**
+
+```sh
+Enter passphrase for /dev/sdb1:
+Verify passphrase:
+```
+
+### Unlock and mounting
+
+To mount and unlock the encrypted partition, you must run
+
+(remember to replace sdb1 with the drive you encrypted.)
+
+```sh
+cryptsetup -v luksOpen /dev/sdb1 my_drive
+Enter passphrase for /dev/sdb1:
+Key slot 0 unlocked.
+Command successful.
+```
+
+`my_drive` is the name you want to give the partition.
+
+This creates a **mapper** for you partition.
+
+```sh
+ls -l /dev/mapper
+lrwxrwxrwx root 7B Sat Sep  4 21:36:42 2021 my_drive ⇒ ../dm-1
+crw------- root 0B Sat Sep  4 20:55:01 2021 control
+```
+
+`my_drive` is a symlink to `dm-1`, which is a virtual file that maps to the actual partition, so you can treat it like any other partition. It doesn't have any filesystem however, so let's make one:
+
+```sh
+mkfs.vfat -F32 /dev/mapper/my_drive # or whatever partition type you want
+```
+
+and now you can mount it.
+
+```sh
+mkdir -p /mnt/encrypted
+mount /dev/mapper/my_drive /mnt/encrypted
+```
+
+Now the files on `my_drive` are accessible and modifiable from `/mnt/encrypted`.
+
+## Cloud encryption
+
+Common cloud services such as **Google drive** and **Onedrive** do not support _E2EE_ (end to end encryption). This means that Google and Microsoft can view your files at any time.
+
+There are services that provide end-to-end encryption though, **Proton** is a notable one. Their entire range of services all use end-to-end encryption, so nobody at Proton can view anything about your data.
+
+(I'm now realizing I sound like a walking advertisement for Proton.)
+
+Here are some good cloud providers:
+
+<div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+    <Card url="https://drive.proton.me">
+        <img
+            src="/img/protondrive.svg"
+            alt="The Proton Drive logo"
+            slot="image"
+            class="p-1"
+        />
+        <h3 slot="title">Proton Drive</h3>
+        <p slot="description">
+            Proton Drive is a Swiss encrypted cloud storage provider from the <i>also</i> encrypted email provider Proton Mail.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>drive.proton.me</span>
+        </svelte:fragment>
+    </Card>
+    <Card url="https://tresorit.com">
+        <img
+            src="/img/tresorit.svg"
+            alt="The tresorit logo"
+            slot="image"
+            class="p-1"
+        />
+        <h3 slot="title">Tresorit</h3>
+        <p slot="description">
+            Tresorit is a Hungarian cloud provider that also supports end-to-end encryption.
+        </p>
+        <svelte:fragment slot="link-text">
+            <Icon src={Link} size="16" mini />
+            <span>tresorit.com</span>
+        </svelte:fragment>
+    </Card>
+</div>

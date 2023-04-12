@@ -45,10 +45,7 @@
         >
             <Button link href="/about">About</Button>
             <Button link href="/projects">Projects</Button>
-            <Button link href="/privacy">
-                <span class="hidden sm:inline">Privacy Guide</span>
-                <span class="inline sm:hidden">Guide</span>
-            </Button>
+            <Button link href="/privacy">Guide</Button>
             <Button link href="/setup">Setup</Button>
         </div>
         {#if expanded}
