@@ -45,7 +45,6 @@
         >
             <Button link href="/about">About</Button>
             <Button link href="/projects">Projects</Button>
-            <Button link href="/privacy">Guide</Button>
             <Button link href="/setup">Setup</Button>
         </div>
         {#if expanded}
