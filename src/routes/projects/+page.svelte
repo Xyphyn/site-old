@@ -25,7 +25,7 @@
     <section
         class="grid grid-cols-1 gap-x-6 gap-y-8 mx-4 sm:grid-cols-2 lg:grid-cols-3"
     >
-        <Project url="https://imagi.xylight.us">
+        <Project url="https://imagi.xylight.dev">
             <img
                 src="/img/imagi.svg"
                 width={36}
@@ -41,7 +41,7 @@
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>imagi.xylight.us</span>
+                <span>imagi.xylight.dev</span>
             </svelte:fragment>
         </Project>
         <Project url="https://neptune.xylight.us">
@@ -77,10 +77,10 @@
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>xylight.us</span>
+                <span>xylight.dev</span>
             </svelte:fragment>
         </Project>
-        <Project url="https://git.xylight.us/Xylight/anti-youtube-redirect">
+        <Project url="https://git.xylight.dev/Xylight/anti-youtube-redirect">
             <div
                 slot="image"
                 class="grid place-items-center w-9 h-9 bg-white rounded-full dark:bg-zinc-800"
@@ -99,8 +99,8 @@
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>git.xylight.us</span>
-            </svelte:fragment>imagi.xylight.us
+                <span>git.xylight.dev</span>
+            </svelte:fragment>
         </Project>
         <Project url="https://github.com/Xyphyn/XyPVP">
             <div
@@ -130,7 +130,7 @@
     <section
         class="grid grid-cols-1 gap-x-6 gap-y-8 mx-4 sm:grid-cols-2 lg:grid-cols-3"
     >
-        <Project url="https://git.xylight.us/Xylight/NumConvert">
+        <Project url="https://git.xylight.dev/Xylight/NumConvert">
             <Icon
                 src={Calculator}
                 size="36"
@@ -143,7 +143,7 @@
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>git.xylight.us</span>
+                <span>git.xylight.dev</span>
             </svelte:fragment>
         </Project>
         <Project url="https://github.com/Xyphyn/MultiTranslate">
@@ -186,7 +186,7 @@
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>libreddit.xylight.us</span>
+                <span>reddit.xylight.dev</span>
             </svelte:fragment>
         </Project>
         <Project url="https://git.xylight.us">
@@ -204,7 +204,7 @@
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>git.xylight.us</span>
+                <span>git.xylight.dev</span>
             </svelte:fragment>
         </Project>
     </section>

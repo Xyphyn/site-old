@@ -86,14 +86,6 @@
                     </Button>
                     <Button
                         link
-                        href="/privacy"
-                        class="w-full"
-                        onclick={() => (expanded = false)}
-                    >
-                        Privacy Guide
-                    </Button>
-                    <Button
-                        link
                         href="/setup"
                         class="w-full"
                         onclick={() => (expanded = false)}
