@@ -1,7 +1,0 @@
-a {
-    @apply underline;
-}
-
-ol {
-    @apply list-decimal;
-}
