@@ -27,7 +27,7 @@
     >
         <Project url="https://imagi.xylight.dev">
             <img
-                src="/img/imagi.svg"
+                src="https://imagi.xylight.dev/img/logo.svg"
                 width={36}
                 height={36}
                 class="bg-white rounded-full dark:bg-zinc-800"
@@ -44,23 +44,23 @@
                 <span>imagi.xylight.dev</span>
             </svelte:fragment>
         </Project>
-        <Project url="https://neptune.xylight.us">
+        <Project url="https://xylo.xylight.dev">
             <img
-                src="/img/neptune.svg"
+                src="https://xylo.xylight.dev/img/logo-background.svg"
                 width={36}
                 height={36}
                 class="bg-white rounded-full dark:bg-zinc-800"
-                alt="Neptune logo"
+                alt="Xylo logo"
                 slot="image"
             />
-            <span slot="title">Neptune</span>
+            <span slot="title">Xylo Bot</span>
             <span slot="description">
                 A general-purpose, moderation, translation, and utility Discord
                 bot meant to handle all aspects of your server.
             </span>
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
-                <span>neptune.xylight.us</span>
+                <span>xylo.xylight.dev</span>
             </svelte:fragment>
         </Project>
         <Project url="/">
