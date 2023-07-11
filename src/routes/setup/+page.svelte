@@ -15,11 +15,11 @@
         <div class="grid grid-cols-1 gap-2 ml-8 max-w-2xl">
             <div class="flex justify-between">
                 <span class="font-bold">OS</span>
-                <span>Arch Linux</span>
+                <span>NixOS</span>
             </div>
             <div class="flex justify-between">
                 <span class="font-bold">Kernel</span>
-                <span>Linux 6.2.10</span>
+                <span>Linux 6.1.34</span>
             </div>
             <div class="flex justify-between">
                 <span class="font-bold">DE</span>
@@ -27,11 +27,11 @@
             </div>
             <div class="flex justify-between">
                 <span class="font-bold">Browser</span>
-                <span>Brave</span>
+                <span>Librewolf</span>
             </div>
             <div class="flex justify-between">
                 <span class="font-bold">Code Editor</span>
-                <span>Visual Studio Code</span>
+                <span>VS Codium</span>
             </div>
         </div>
     </section>

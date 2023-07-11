@@ -1,24 +1,32 @@
 <script>
-    import Colored from '$lib/component/Colored.svelte'
-    import Project from '$lib/misc/index/Project.svelte'
-    import { GlobeAlt, Icon, Link, ShieldExclamation } from 'svelte-hero-icons'
+    import Colored from "$lib/component/Colored.svelte";
+    import Project from "$lib/misc/index/Project.svelte";
+    import {
+        AtSymbol,
+        Camera,
+        GlobeAlt,
+        Icon,
+        Link,
+        ShieldExclamation,
+    } from "svelte-hero-icons";
 </script>
 
-<title>Xylight</title>
+<svelte:head>
+    <title>Xylight</title>
+</svelte:head>
 <div class="grid grid-cols-1 gap-4 m-12 w-full">
     <span class="mx-4 text-sm uppercase opacity-60">About Me</span>
-    <div
+    <h1
         class="flex flex-col gap-4 justify-center items-start mx-4 mb-4 max-w-2xl"
     >
         <h1 class="text-4xl font-bold md:text-5xl">
-            Hobbyist Kotlin, TypeScript, and Svelte developer.
+            Hobbyist TypeScript, Go, and Svelte developer.
         </h1>
-        <p class="opacity-80">
-            I am <Colored><span class="font-bold">James</span></Colored>, and I
-            aim to make software that is meant to help, entertain, or benefit
-            people.
+        <p class="opacity-80 text-base font-normal">
+            I'm <strong>Xylight</strong>, and I aim to make software that is
+            meant to help, entertain, or benefit people.
         </p>
-    </div>
+    </h1>
 
     <span class="mx-4 text-sm uppercase opacity-60">Projects</span>
     <p class="mx-4 max-w-2xl opacity-80">
@@ -29,15 +37,29 @@
     <section
         class="grid grid-cols-1 gap-x-6 gap-y-8 mx-4 sm:grid-cols-2 lg:grid-cols-3"
     >
-        <Project url="https://imagi.xylight.dev">
-            <img
-                src="https://imagi.xylight.dev/img/logo.svg"
-                width={36}
-                height={36}
-                class="bg-white rounded-full dark:bg-zinc-800"
-                alt="Imagi logo"
+        <Project url="https://photon.xylight.dev">
+            <div
+                class="bg-white rounded-full dark:bg-zinc-800 w-9 h-9 grid place-items-center"
                 slot="image"
-            />
+            >
+                <Icon src={AtSymbol} width={20} />
+            </div>
+            <span slot="title">Photon</span>
+            <span slot="description">
+                A sleek web client for the decentralized social platform Lemmy.
+            </span>
+            <svelte:fragment slot="link-text">
+                <Icon src={Link} size="16" mini />
+                <span>photon.xylight.dev</span>
+            </svelte:fragment>
+        </Project>
+        <Project url="https://imagi.xylight.dev">
+            <div
+                class="bg-white rounded-full dark:bg-zinc-800 w-9 h-9 grid place-items-center"
+                slot="image"
+            >
+                <Icon src={Camera} width={20} />
+            </div>
             <span slot="title">Imagi</span>
             <span slot="description">
                 A social app created with Pocketbase where everything updates in
@@ -104,29 +126,6 @@
             <svelte:fragment slot="link-text">
                 <Icon src={Link} size="16" mini />
                 <span>git.xylight.dev</span>
-            </svelte:fragment>
-        </Project>
-        <Project url="https://github.com/Xyphyn/XyPVP">
-            <div
-                slot="image"
-                class="grid place-items-center w-9 h-9 bg-white rounded-full dark:bg-zinc-800"
-            >
-                <img
-                    src="/content/sword.webp"
-                    width={28}
-                    height={28}
-                    class="rounded-full"
-                    alt="Minecraft diamond sword"
-                />
-            </div>
-            <span slot="title">XyPVP</span>
-            <span slot="description">
-                The plugin for a Minecraft server I was making a while back, it
-                supports FFA, Duels, and more.
-            </span>
-            <svelte:fragment slot="link-text">
-                <Icon src={Link} size="16" mini />
-                <span>github.com</span>
             </svelte:fragment>
         </Project>
     </section>
